@@ -19,7 +19,7 @@ header {
     flex-wrap: wrap;
     width: 100%;
     top: 0;
-    height: 15vh;
+    height: 10em;
     position: fixed;
 }
 
@@ -28,9 +28,27 @@ header > nav {
     width: 45%;
 }
 
+select#cat_filter {
+    border: none;
+    background: none;
+    border-radius: 25px;
+    padding: 7px 20px;
+    box-shadow: 0 0 10px #5e5e5e;
+    color: #fff;
+    font-size: 18px;
+}
+
+select#cat_filter:focus-visible {
+    outline: none;
+}
+
+select#cat_filter option {
+    color: #484848;
+}
+
 div.site-logo img {
-    max-width: 100%;
     height: auto;
+    width: 20%;
 }
 
 nav.widget.nav-menu ul,
@@ -73,7 +91,7 @@ aside.widget ul a:hover {
 
 main {
     margin: 8em 0;
-    width: 100%;
+    width: 85%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -81,7 +99,7 @@ main {
 }
 
 div.post {
-    font-size: 18px;
+    font-size: 22px;
     width: 45%;
     margin-bottom: 2em;
 }
@@ -107,13 +125,14 @@ div.categories {
 }
 
 div.categories {
-    justify-content: center;
+    justify-content: space-around;
     font-size: 16px;
     margin-top: -50px;
 }
 
 div.categories p {
     margin: 0;
+    font-style: italic;
 }
 
 p.category a,
@@ -123,10 +142,6 @@ div.categories a {
     font-style: italic;
     transition: .5s;
     margin-left: 5px;
-}
-
-div.categories a {
-    font-style: normal;
 }
 
 p.excerpt a,
@@ -155,8 +170,121 @@ footer {
     bottom: 0;
     background: linear-gradient(to top, #2c2c2c 20%, #424242 80%, #44414100);
     width: 100%;
-    height: 10vh;
+    height: 5em;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (min-width: 2560px) {
+    nav.widget.nav-menu ul a,
+    aside.widget ul a,
+    select#cat_filter,
+    div.categories,
+    select#cat_filter option {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    nav.widget.nav-menu ul a,
+    aside.widget ul a,
+    select#cat_filter,
+    div.categories,
+    select#cat_filter option {
+        font-size: 25px;
+    }
+
+    header.without-filter {
+        height: 5em;
+    }
+
+    div.post {
+        font-size: 23px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+    nav.widget.nav-menu ul a, aside.widget ul a, select#cat_filter, div.categories, select#cat_filter option {
+        font-size: 13px;
+    }
+
+    div.post {
+        font-size: 18px;
+    }
+
+    footer {
+        height: 3em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 0;
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        height: 15em;
+        background: linear-gradient(to bottom, #2c2c2c 20%, #484848 90%, #44414100);
+    }
+
+    header > div,
+    header > nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    nav.widget.nav-menu ul {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    nav.widget.nav-menu ul li {
+        margin: 5px;
+    }
+
+    nav.widget.nav-menu ul a,
+    aside.widget ul a,
+    select#cat_filter,
+    div.categories,
+    select#cat_filter option,
+    div.post {
+        font-size: 18px;
+    }
+
+    .site-logo a {
+        width: 30%;
+    }
+
+    div.site-logo img {
+        width: 100%;
+    }
+
+    nav.widget.nav-menu ul a {
+        font-size: 1.2em;
+    }
+
+    div.categories {
+        margin-top: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form#filter {
+        margin-top: 20px;
+    }
+
+    main {
+        margin: 20em 0;
+    }
+
+    div.post {
+        font-size: 18px;
+    }
 }
