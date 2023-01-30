@@ -67,3 +67,9 @@ function newExcerptMore($more): string
 }
 
 add_filter('excerpt_more', 'newExcerptMore');
+
+add_action('wp_insert_post', 'set_default_post_custom_fields', 10, 2);
+function set_default_post_custom_fields($post_id)
+{
+	add_post_meta($post_id, 'Note', '', true);
+}
