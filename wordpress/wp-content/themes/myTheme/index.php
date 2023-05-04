@@ -9,10 +9,9 @@ get_header(); ?>
     <?php
 	$currentPage = get_query_var('paged');
     $posts = new WP_Query([
-        'posts_per_page' => 2,
+        'posts_per_page' => -1,
         'paged' => $currentPage,
     ]);
-
     if ($posts->have_posts()):
         while ($posts->have_posts()): $posts->the_post();?>
             <div class="post">

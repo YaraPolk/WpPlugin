@@ -12,9 +12,11 @@ add_action( 'wp_ajax_filter', 'true_filter_function' );
 add_action( 'wp_ajax_nopriv_filter', 'true_filter_function' );
 
 function true_filter_function(){
-	query_posts('cat=' . $_POST['cat_filter']);
-	load_template(get_template_directory() . '/templates/posts.php');
-    die();
+	query_posts([
+        'cat'            => $_POST['cat_filter'],
+        ]);
+	load_template(get_template_directory() . '/templates/filter-posts.php');
+    wp_die();
 }
 
 function myThemesSetup() {
