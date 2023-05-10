@@ -15,11 +15,17 @@ module.exports = {
                 use: [
                     miniCss.loader,
                     {
-                        loader : 'css-loader',
-                        options: { url : false }
+                        loader: 'css-loader',
+                        options: { sourceMap: true }
                     },
-                    'sass-loader'
-                ],
+                    {
+                        loader: 'postcss-loader',
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: { sourceMap: true }
+                    }
+                ]
             },
         ],
     },

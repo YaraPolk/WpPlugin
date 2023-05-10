@@ -3,6 +3,7 @@ let sort = false;
 
 $(document).ready(function(){
     $('#cat_filter').on('change', function() {
+        $('#sort button').text('sort');
         $.ajax({
             url : cat_filter.ajaxurl,
             data: {
