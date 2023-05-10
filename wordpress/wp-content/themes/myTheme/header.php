@@ -11,7 +11,8 @@
         <title><?= wp_get_document_title() ?></title>
         <?php wp_head(); ?>
     </head>
-    <body>
+    <body<?php body_class(); ?>>
+        <?php wp_body_open(); ?>
         <header class="<?= is_singular() ? 'without-filter' : ''?>">
             <?php if (has_custom_logo()): ?>
                 <div class="site-logo"><?php the_custom_logo(); ?></div>
