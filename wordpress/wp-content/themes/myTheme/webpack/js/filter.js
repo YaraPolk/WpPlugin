@@ -1,8 +1,6 @@
 let $ = jQuery.noConflict();
 let sort = false;
 
-console.log('Test');
-
 $(document).ready(function(){
     $('#cat_filter').on('change', function() {
         $('#sort button').text('sort');
